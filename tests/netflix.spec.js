@@ -8,7 +8,7 @@ test("my first test", async ({ page }) => {
   await page.goto("https://www.netflix.com");
 
   // assert page title appears
-  await expect(page.locator('[data-uia="hero-title"]')).toHaveText(
+  await expect(page.locator('[data-uia="nmhp-card-hero-title"]')).toHaveText(
     "Unlimited movies, TV shows, and more."
   );
 });
