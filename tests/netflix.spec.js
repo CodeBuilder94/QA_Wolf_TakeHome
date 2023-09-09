@@ -17,7 +17,7 @@ test("my first test", async ({ page }) => {
 test("bad sign in", async({page}) =>{
   await page.goto("https://www.netflix.com");
 
-  //click sign in button to move to sing up page
+  //click sign in button to move to sign up page
   await page.getByRole('button', {name: 'Sign In'}).click();
   //enter fake email
   await page.locator('.nfTextField').first().fill("testemail@test.com");
@@ -25,7 +25,7 @@ test("bad sign in", async({page}) =>{
   await page.locator('.nfTextField>>nth=1').fill("123456");
   //submit information
   await page.getByRole('button', {name: "Sign In"}).click();
-  //test too see if the bad loging prompt appeared
+  //test to see if the bad login prompt appeared
   await expect(page.getByText('Incorrect password.')).toBeVisible();
 });
 
