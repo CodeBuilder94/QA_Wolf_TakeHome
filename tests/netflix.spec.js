@@ -20,9 +20,9 @@ test("bad sign in", async({page}) =>{
   //click sign in button to move to sing up page
   await page.getByRole('button', {name: 'Sign In'}).click();
   //enter fake email
-  await page.getByRole("input",{name: "userLoginId"}).fill("testemail@test.com");
+  await page.locator('.nfTextField').first().fill("testemail@test.com");
   //enter fake password
-  await page.getByRole("input",{name: "password"}).fill("123456");
+  await page.locator('.nfTextField>>nth=1').fill("123456");
   //submit information
   await page.getByRole('button', {name: "Sign In"}).click();
   //test too see if the bad loging prompt appeared
